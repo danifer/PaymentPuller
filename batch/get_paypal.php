@@ -15,7 +15,7 @@ if (strtotime($placeholder->getValue()) > strtotime('now -1 day')) {
 }
 
 $start_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($placeholder->getValue()));
-$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +24 hours'));
+$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +12 hours'));
 
 $paypal = new paypal();
 $results = $paypal->getTransactionSearchArray($start_date, $end_date);
