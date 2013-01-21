@@ -1,0 +1,2 @@
+CREATE TABLE paypal_transaction (id BIGINT AUTO_INCREMENT, timestamp DATETIME, timezone VARCHAR(3), type VARCHAR(255), email VARCHAR(255), name VARCHAR(255), transaction_id VARCHAR(255) UNIQUE, status VARCHAR(255), amount FLOAT(18, 2), currency_code VARCHAR(3), fee_amount FLOAT(18, 2), net_amount FLOAT(18, 2), created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE variable (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, value VARCHAR(255), PRIMARY KEY(id)) ENGINE = INNODB;

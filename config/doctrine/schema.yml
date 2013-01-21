@@ -1,0 +1,35 @@
+Variable:
+  columns:
+    name:
+      type: string(255)
+      unique: true
+    value:
+      type: string(255)
+
+PaypalTransaction:
+  actAs:
+    Timestampable: ~
+  columns:
+    timestamp:
+      type: timestamp
+    timezone:
+      type: string(3)
+    type:
+      type: string(255)
+    email:
+      type: string(255)
+    name:
+      type: string(255)
+    transaction_id:
+      type: string(255)
+      unique: true
+    status:
+      type: string(255)
+    amount:
+      type: float
+    currency_code:
+      type: string(3)
+    fee_amount:
+      type: float
+    net_amount:
+      type: float
