@@ -7,17 +7,17 @@ $configuration = ProjectConfiguration::getApplicationConfiguration('frontend', '
 
 sfContext::createInstance($configuration);
 
-$placeholder = Variable::getPaypalStart();
+if (strtotime( Variable::getPaypalStart()->getValue()) > strtotime('now -1 day')) {
 
-if (strtotime($placeholder->getValue()) > strtotime('now -1 day')) {
-  echo 'skip';
   exit;
 }
 
-$start_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($placeholder->getValue()));
-$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +12 hours'));
-
 $paypal = new paypal();
+$placeholder = Variable::getPaypalStart();
+
+$start_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($placeholder->getValue()));
+$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +8 hours'));
+
 $results = $paypal->getTransactionSearchArray($start_date, $end_date);
 
 foreach ($results['TRANSACTIONS'] as $key => $result) {
