@@ -9,4 +9,10 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->enablePlugins('sfDoctrinePlugin');
   }
+
+  public function configureDoctrine(Doctrine_Manager $manager)
+  {
+    $manager->setCollate('utf8_unicode_ci');
+    $manager->setCharset('utf8');
+  }
 }
