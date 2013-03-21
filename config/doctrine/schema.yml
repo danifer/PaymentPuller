@@ -33,3 +33,43 @@ PaypalTransaction:
       type: float
     net_amount:
       type: float
+
+AuthorizeNetBatch:
+  actAs:
+    Timestampable: ~
+  columns:
+    batch_id:
+      type: string(255)
+    settlement_time_utc:
+      type: timestamp
+    settlement_time_local:
+      type: timestamp
+    settlement_state:
+      type: string(255)
+    payment_method:
+      type: string(255)
+
+AuthorizeNetTransaction:
+  actAs:
+    Timestampable: ~
+  columns:
+    trans_id:
+      type: string(255)
+    batch_id:
+      type: string(255)
+    submit_time_utc:
+      type: timestamp
+    submit_time_local:
+      type: timestamp
+    transaction_status:
+      type: string(255)
+    first_name:
+      type: string(255)
+    last_name:
+      type: string(255)
+    account_type:
+      type: string(255)
+    account_number:
+      type: string(255)
+    settle_amount:
+      type: float
