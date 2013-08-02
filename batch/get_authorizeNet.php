@@ -16,7 +16,7 @@ $authNet = new authorizeNet();
 $placeholder = Variable::getAuthorizeNetStart();
 
 $start_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($placeholder->getValue()));
-$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +25 days'));
+$end_date = gmdate("Y-m-d\TH:i:s\Z", strtotime($start_date.' +1 day'));
 
 $batches = $authNet->getBatchByDateRange($start_date, $end_date);
 
