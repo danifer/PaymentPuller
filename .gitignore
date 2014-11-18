@@ -2,3 +2,4 @@ config/app.yml
 config/databases.yml
 cache/*
 log/*
+data/*.sql.gz
