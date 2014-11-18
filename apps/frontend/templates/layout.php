@@ -66,7 +66,8 @@
               <div class="nav-collapse collapse">
                 <ul class="nav pull-right header">
                   <li><?php echo link_to('Gross Revenue', 'report/monthly') ?></li>
-                  <li><?php echo link_to('home', '@homepage') ?></li>
+                  <li><?php echo link_to('PayPal Recurring Lookup', 'paypal/checkRecurring') ?></li>
+                  <li><?php echo link_to('Home', '@homepage') ?></li>
                 </ul>
               </div><!--/.nav-collapse -->
             </div>
