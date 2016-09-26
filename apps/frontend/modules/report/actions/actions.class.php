@@ -47,6 +47,7 @@ class reportActions extends sfActions
       ->from('PaypalTransaction p')
       ->whereIn('type', array('Payment', 'Recurring Payment'))
       ->andWhere('p.timestamp > ?', $period_end)
+      ->andWhere('p.amount > ?', 0)
       ->groupBy('year DESC, month DESC')
       ->fetchArray();
 
@@ -60,6 +61,7 @@ class reportActions extends sfActions
       ->from('AuthorizeNetTransaction a')
       ->whereIn('transaction_status', array('settledSuccessfully'))
       ->andWhere('a.submit_time_utc > ?', $period_end)
+      ->andWhere('a.settle_amount > ?', 0)
       ->groupBy('year DESC, month DESC')
       ->fetchArray();
 
